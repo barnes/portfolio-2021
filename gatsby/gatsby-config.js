@@ -1,6 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: "Portfolio 2021",
+    siteUrl: "www.google.com",
+    description: "Ryan Barnes Portfolio"
   },
   plugins: [
     {
