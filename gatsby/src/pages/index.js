@@ -11,7 +11,30 @@ const ProjectStyles = styled.div`
   display: grid;
   grid-template-columns: 50% auto;
   align-items: center;
+  .date {
+    font-style: italic;
+    font-size:12px;
+    border-bottom: 2px dashed #FEC5BB;
+
+  }
+  h1{ 
+    font-weight: 200;
+    border-bottom: 5px solid #FEC5BB
+  }
   text-decoration:none;
+  ul{
+    list-style: none;
+    
+  }
+  ul li {
+    display: block;
+    background-color:#FEC5BB;
+    width: 100px;
+    padding: 10px;
+    margin: 20px;
+    text-align: center;
+  }
+  
 `;
 
 const HeaderStyles = styled.div`
@@ -43,7 +66,7 @@ const ProjectLeft = styled.div`
 `;
 
 const ProjectRight = styled.div`
-  display:grid;
+  align-items:center;
   padding:1rem 2rem;
   background-color: white;
   height: 100%;
@@ -74,11 +97,14 @@ export default function Index({ data }) {
           <Img fluid={project.image.asset.fluid} />
         </ProjectLeft>
         <ProjectRight>
-          <span>{project.date}</span>
+          <span class="date">{project.date}</span>
           <a href={project.link}><h1>{project.title}</h1></a>
           <p>{project.description}</p> 
-          <a href={project.github}>Github</a>
-          <a href={project.link}>Link</a>
+          <ul>
+            <li><a href={project.github}>Github</a></li>
+            <li><a href={project.link}>Link</a></li>
+          </ul>
+          
         </ProjectRight>
         
         
