@@ -2,10 +2,12 @@ import React from "react"
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from "styled-components";
-import "@fontsource/montserrat/200.css"
+import "@fontsource/inter"
+import Header from "../components/Header";
+import Project from "../components/Project";
 
 const ProjectStyles = styled.div`
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   background-color:#FEC5BB;
   margin:50px 50px;
   display: grid;
@@ -37,28 +39,6 @@ const ProjectStyles = styled.div`
   
 `;
 
-const HeaderStyles = styled.div`
-  font-family: 'Montserrat', sans-serif;
-  align-items: center;
-  text-decoration:none;
-  background-color:white;
-  display:grid;
-  grid-template-columns: 15% auto;
-  padding-left:50px;
-  margin-bottom:50px;
-`;
-
-const AboutStyles = styled.div`
-  font-family: 'Montserrat', sans-serif;
-  padding-left:50px;
-  margin: auto;
-  padding:20px;
-  position:center;
-  background-color:white;
-  h1{
-    font-weight:200;
-  }
-`;
 
 const ProjectLeft = styled.div`
   display:grid;
@@ -75,23 +55,12 @@ const ProjectRight = styled.div`
 
 export default function Index({ data }) {
   const projects = data.projects.nodes;
-  console.log(projects);
   return (
     <>
-    {/* <HeaderStyles>
-      <div class="logo">
-        <h1>Ryan Barnes</h1>
-      </div>
-      <div class="nav">
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-      </div>
-    </HeaderStyles> */}
-    <AboutStyles>
-      <h1>I'm Ryan. I make stuff with code. </h1>
-      <p>I'm passionate about making highly functional websites and applications, and constantly learning new tech.</p>
-    </AboutStyles>
+    <Header/>
     {projects.map((project) => (
+      <>
+      <Project data={project}/>
       <ProjectStyles key="{project.id}">
         <ProjectLeft>
           <Img fluid={project.image.asset.fluid} />
@@ -104,11 +73,9 @@ export default function Index({ data }) {
             <li><a href={project.github}>Github</a></li>
             <li><a href={project.link}>Link</a></li>
           </ul>
-          
         </ProjectRight>
-        
-        
       </ProjectStyles>
+      </>
     ))}
     </>
     

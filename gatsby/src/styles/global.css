@@ -1,44 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;700&display=swap');
+
 body{
-    font-family: "Nunito Sans";
-    background-color: #F8EDEB;
-    margin: 0px; 
-}
-
-
-a{
-    text-decoration: none;
-    color:Black;
-}
-
-a:link {
-    text-decoration: none;
-    color:black;
-  }
-  
-  a:visited {
-    text-decoration: none;
-    color:grey;
-  }
-  
-  a:hover {
-    text-decoration: none;
-    color:black;
-  }
-  
-  a:active {
-    text-decoration: none;
-  }
-
-.button-lg {
-    background-color:black;
-    padding: 10px;
-    border-radius:5px;
-    margin:0px; 
-}
-
-.button-sm {
-    background-color:black;
-    padding: 5px;
-    border-radius:5px; 
-    display:block;
+  padding: 20px;
+  font-family: "Inter"
 }
